@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TourGide</string>
+    <string name="category_Wielun">Wielun</string>
+    <string name="category_Czestochowa">Czestochowa</string>
+    <string name="category_Poznan">Poznan</string>
+    <string name="category_Wroclaw">Wroclaw</string>
+    <string name="display_zoom">ZoooooM</string>
+</resources>
