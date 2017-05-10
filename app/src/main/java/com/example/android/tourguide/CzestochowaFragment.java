@@ -1,7 +1,8 @@
 package com.example.android.tourguide;
 
-import android.content.Context;
-import android.media.MediaPlayer;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,13 +11,15 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 
-public class CzestochowaFragment extends Fragment {private MediaPlayer mMediaPlayer;
-    private Context mContext;
-    private String LOG = "Colors";
-
+public class CzestochowaFragment extends Fragment {
+    public static final String EXTRA_PICTURE = "EXTRA_PICTURE";
+    public static final String EXTRA_TITLE = "EXTRA_TITLE";
+    public static final String EXTRA_DESCRIPTION = "EXTRA_DESCRIPTION";
+    private static final int REQUEST_RESPONSE = 1;
 
     public CzestochowaFragment() {
         // Required empty public constructor
@@ -30,43 +33,39 @@ public class CzestochowaFragment extends Fragment {private MediaPlayer mMediaPla
         // Create an array of items
         final ArrayList<Item> items = new ArrayList<Item>();
 
-        items.add(new Item(R.drawable.church01,"Church", "Gothic church of Saint Josephs"));
-        items.add(new Item(R.drawable.church02,"Church", "Gothic church of Saint Mary"));
-        items.add(new Item(R.drawable.fountain,"Fountain", "Fountain at the market square"));
-        items.add(new Item(R.drawable.medieval_walls,"Wals", "Rebuild medieval walls"));
-        items.add(new Item(R.drawable.museum,"Museum", "Museum"));
-        items.add(new Item(R.drawable.townhall,"Townhall", "Rebuild medieval town hall"));
+        items.add(new Item(R.drawable.church01, "Church", "Gothic church of Saint Josephs"));
+        items.add(new Item(R.drawable.church02, "Church", "Gothic church of Saint Mary"));
+        items.add(new Item(R.drawable.fountain, "Fountain", "Fountain at the market square"));
+        items.add(new Item(R.drawable.medieval_walls, "Wals", "Rebuild medieval walls"));
+        items.add(new Item(R.drawable.museum, "Museum", "Museum"));
+        items.add(new Item(R.drawable.townhall, "Townhall", "Rebuild medieval town hall"));
 
-        ItemAdapter adapter = new ItemAdapter(getActivity(), items, R.color.tan_background);
+        final ItemAdapter adapter = new ItemAdapter(getActivity(), items, R.color.tan_background);
         final ListView listview = (ListView) rootView.findViewById(R.id.list);
         listview.setAdapter(adapter);
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                getView();
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+                Intent intent1 = new Intent(view.getContext(), DisplayZoom.class);
+                intent1.putExtra(EXTRA_TITLE, adapter.getItem(position).getTitle());
+                intent1.putExtra(EXTRA_DESCRIPTION, adapter.getItem(position).getDescription());
+
+                ByteArrayOutputStream bs = new ByteArrayOutputStream();
+                Bitmap b = BitmapFactory.decodeResource(getResources(), adapter.getItem(position).getPicture());
+                b.compress(Bitmap.CompressFormat.JPEG, 100, bs);
+                intent1.putExtra(EXTRA_PICTURE, bs.toByteArray());
+                startActivityForResult(intent1, REQUEST_RESPONSE);
 
             }
         });
         return rootView;
     }
-    //    public View getView(int position, View convertView, ViewGroup parent) {
-//        ImageView imageView = (ImageView)convertView;
-//        if (imageView == null) {
-//            imageView = new ImageView(mContext);
-//        }
-//        BitmapFactory.Options options = new BitmapFactory.Options();
-//        options.inSampleSize = 0;
-//        Bitmap bm = BitmapFactory.decodeFile(thumbnails.get(i), options);
-//        imageView.setImageBitmap(bm);
-//        imageView.setLayoutParams(new Gallery.LayoutParams(300, 3000));
-//        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-//        return imageView;
-//    }
+
     @Override
     public void onStop() {
         super.onStop();
     }
-
 
 }

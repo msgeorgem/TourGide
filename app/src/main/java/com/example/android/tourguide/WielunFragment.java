@@ -1,10 +1,8 @@
 package com.example.android.tourguide;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -26,9 +24,6 @@ public class WielunFragment extends Fragment {
     public static final String EXTRA_TITLE = "EXTRA_TITLE";
     public static final String EXTRA_DESCRIPTION = "EXTRA_DESCRIPTION";
     private static final int REQUEST_RESPONSE = 1;
-    private MediaPlayer mMediaPlayer;
-    private Context mContext;
-    private String LOG = "Colors";
 
     public WielunFragment() {
         // Required empty public constructor
@@ -71,23 +66,10 @@ public class WielunFragment extends Fragment {
         });
         return rootView;
     }
-//    public View getView(int position, View convertView, ViewGroup parent) {
-//        ImageView imageView = (ImageView)convertView;
-//        if (imageView == null) {
-//            imageView = new ImageView(mContext);
-//        }
-//        BitmapFactory.Options options = new BitmapFactory.Options();
-//        options.inSampleSize = 0;
-//        Bitmap bm = BitmapFactory.decodeFile(thumbnails.get(i), options);
-//        imageView.setImageBitmap(bm);
-//        imageView.setLayoutParams(new Gallery.LayoutParams(300, 300));
-//        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-//        return imageView;
-//    }
+
     @Override
     public void onStop() {
         super.onStop();
     }
-
 
 }

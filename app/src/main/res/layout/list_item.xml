@@ -4,21 +4,32 @@
     android:id="@+id/listItem"
     android:layout_width="match_parent"
     android:layout_height="@dimen/list_item_height"
-    android:background="@color/tan_background"
+    android:background="@drawable/list_selector"
     android:minHeight="@dimen/list_item_height"
     android:orientation="horizontal">
 
-    <ImageView
+
+    <LinearLayout
+        android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/image_gb"
+        android:padding="3dp">
+
+        <ImageView
         android:id="@+id/icon"
         android:layout_width="@dimen/list_item_height"
-        android:layout_height="@dimen/list_item_height" />
-
+            android:layout_height="@dimen/list_item_height"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/text_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_toRightOf="@+id/icon"
+        android:layout_toRightOf="@+id/thumbnail"
         android:orientation="vertical"
         android:paddingLeft="16dp">
 
@@ -31,7 +42,7 @@
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
             android:textStyle="bold"
-            tools:text="lutti" />
+            tools:text="title" />
 
         <TextView
             android:id="@+id/description_text_view"
@@ -41,7 +52,7 @@
             android:gravity="top"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
-            tools:text="one" />
+            tools:text="description" />
 
 
     </LinearLayout>
