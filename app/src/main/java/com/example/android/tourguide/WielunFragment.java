@@ -21,20 +21,18 @@ import java.util.ArrayList;
  */
 
 
-
-public class WielunFragment extends Fragment {private MediaPlayer mMediaPlayer;
+public class WielunFragment extends Fragment {
+    public static final String EXTRA_PICTURE = "EXTRA_PICTURE";
+    public static final String EXTRA_TITLE = "EXTRA_TITLE";
+    public static final String EXTRA_DESCRIPTION = "EXTRA_DESCRIPTION";
+    private static final int REQUEST_RESPONSE = 1;
+    private MediaPlayer mMediaPlayer;
     private Context mContext;
     private String LOG = "Colors";
-
 
     public WielunFragment() {
         // Required empty public constructor
     }
-    public static final String EXTRA_PICTURE = "EXTRA_PICTURE";
-    public static final String EXTRA_TITLE = "EXTRA_TITLE";
-    public static final String EXTRA_DESCRIPTION = "EXTRA_DESCRIPTION";
-
-    private static final int REQUEST_RESPONSE = 1;
 
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
@@ -68,7 +66,6 @@ public class WielunFragment extends Fragment {private MediaPlayer mMediaPlayer;
                 b.compress(Bitmap.CompressFormat.JPEG, 100, bs);
                 intent1.putExtra(EXTRA_PICTURE,bs.toByteArray());
                 startActivityForResult(intent1, REQUEST_RESPONSE);
-
 
             }
         });
