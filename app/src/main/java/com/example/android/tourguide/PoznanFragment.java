@@ -33,12 +33,12 @@ public class PoznanFragment extends Fragment {
         // Create an array of items
         final ArrayList<Item> items = new ArrayList<Item>();
 
-        items.add(new Item(R.drawable.church01, "Church", "Gothic church of Saint Josephs"));
-        items.add(new Item(R.drawable.church02, "Church", "Gothic church of Saint Mary"));
-        items.add(new Item(R.drawable.fountain, "Fountain", "Fountain at the market square"));
-        items.add(new Item(R.drawable.medieval_walls, "Wals", "Rebuild medieval walls"));
-        items.add(new Item(R.drawable.museum, "Museum", "Museum"));
-        items.add(new Item(R.drawable.townhall, "Townhall", "Rebuild medieval town hall"));
+        items.add(new Item(R.drawable.flight_poznan, "City Center", "City Center of Poznan"));
+        items.add(new Item(R.drawable.oldtown_poznan, "Oldtown Poznań", "Oldtown Poznań"));
+        items.add(new Item(R.drawable.railway_poznan, "Railway Poznań", "Railway Station with Mall"));
+        items.add(new Item(R.drawable.road_poznan, "Road Poznan", "Road Poznan"));
+        items.add(new Item(R.drawable.stadium_poznan, "Stadium Poznan", "City Stadium of Local football team Lech Poznan"));
+        items.add(new Item(R.drawable.townhall_poznan, "Townhall", "Famous townhall with goats"));
 
         final ItemAdapter adapter = new ItemAdapter(getActivity(), items, R.color.tan_background);
         final ListView listview = (ListView) rootView.findViewById(R.id.list);
@@ -54,7 +54,7 @@ public class PoznanFragment extends Fragment {
 
                 ByteArrayOutputStream bs = new ByteArrayOutputStream();
                 Bitmap b = BitmapFactory.decodeResource(getResources(), adapter.getItem(position).getPicture());
-                b.compress(Bitmap.CompressFormat.JPEG, 100, bs);
+                b.compress(Bitmap.CompressFormat.JPEG, 25, bs);
                 intent1.putExtra(EXTRA_PICTURE, bs.toByteArray());
                 startActivityForResult(intent1, REQUEST_RESPONSE);
             }

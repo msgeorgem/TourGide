@@ -58,7 +58,7 @@ public class WielunFragment extends Fragment {
 
                 ByteArrayOutputStream bs = new ByteArrayOutputStream();
                 Bitmap b = BitmapFactory.decodeResource(getResources(),adapter.getItem(position).getPicture());
-                b.compress(Bitmap.CompressFormat.JPEG, 100, bs);
+                b.compress(Bitmap.CompressFormat.JPEG, 50, bs);
                 intent1.putExtra(EXTRA_PICTURE,bs.toByteArray());
                 startActivityForResult(intent1, REQUEST_RESPONSE);
 
