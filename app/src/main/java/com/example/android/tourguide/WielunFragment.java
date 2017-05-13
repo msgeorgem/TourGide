@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +25,12 @@ public class WielunFragment extends Fragment {
     public static final String EXTRA_PICTURE = "EXTRA_PICTURE";
     public static final String EXTRA_TITLE = "EXTRA_TITLE";
     public static final String EXTRA_DESCRIPTION = "EXTRA_DESCRIPTION";
+    public static final String TAG = "Wielun_Fragment";
     private static final int REQUEST_RESPONSE = 1;
+    public ListView listview;
+    public ItemAdapter adapter;
+    public int index;
+    Parcelable state;
 
     public WielunFragment() {
         // Required empty public constructor
@@ -43,9 +50,11 @@ public class WielunFragment extends Fragment {
         items.add(new Item(R.drawable.medieval_walls,"Wals", "Rebuild medieval walls"));
         items.add(new Item(R.drawable.museum,"Museum", "Museum"));
         items.add(new Item(R.drawable.townhall,"Townhall", "Rebuild medieval town hall"));
+        items.add(new Item(R.drawable.townhall, "Townhall", "Rebuild medieval town hall"));
+        items.add(new Item(R.drawable.townhall, "Townhall", "Rebuild medieval town hall"));
 
-        final ItemAdapter adapter = new ItemAdapter(getActivity(), items, R.color.tan_background);
-        final ListView listview = (ListView) rootView.findViewById(R.id.list);
+        adapter = new ItemAdapter(getActivity(), items, R.color.tan_background);
+        listview = (ListView) rootView.findViewById(R.id.list);
         listview.setAdapter(adapter);
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -68,8 +77,34 @@ public class WielunFragment extends Fragment {
     }
 
     @Override
+    public void onPause() {
+        // Save ListView state @ onPause
+        Log.d(TAG, "saving listview state @ onPause");
+        state = listview.onSaveInstanceState();
+        index = listview.getFirstVisiblePosition();
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        if (getAdapter() != null) {
+            listview.setAdapter(getAdapter());
+            listview.setSelectionFromTop(index, 0);
+            if (state != null) {
+                listview.requestFocus();
+                listview.onRestoreInstanceState(state);
+            }
+        }
+    }
+
+    @Override
     public void onStop() {
         super.onStop();
     }
 
+    public ItemAdapter getAdapter() {
+        return adapter;
+    }
 }

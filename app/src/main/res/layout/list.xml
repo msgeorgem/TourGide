@@ -3,8 +3,8 @@
     android:id="@+id/list"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-        android:divider="#b5b5b5"
-        android:dividerHeight="1dp"
+        android:divider="#e8eaf6"
+        android:dividerHeight="3dp"
     android:drawSelectorOnTop="true"
         android:listSelector="@drawable/list_selector"
         android:orientation="vertical" />
