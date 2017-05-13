@@ -31,9 +31,6 @@ public class WielunFragment extends Fragment {
     public ListView listview;
     public ItemAdapter adapter;
     public int index;
-    public int title;
-    public int description;
-
     Parcelable state;
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
 

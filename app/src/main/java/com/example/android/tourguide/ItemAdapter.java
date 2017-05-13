@@ -1,6 +1,7 @@
 package com.example.android.tourguide;
 
 import android.app.Activity;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ public class ItemAdapter extends ArrayAdapter<Item> {
      * Resource ID for the background color for this list of words
      */
     private int mColorResourceId;
+
 
     /**
      * This is our own custom constructor (it doesn't mirror a superclass constructor).
@@ -51,49 +53,58 @@ public class ItemAdapter extends ArrayAdapter<Item> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Check if the existing view is being reused, otherwise inflate the view
-        View listItemView = convertView;
-        if (listItemView == null) {
-            listItemView = LayoutInflater.from(getContext()).inflate(
+        ViewHolder viewHolder;
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(
                     R.layout.list_item, parent, false);
+            viewHolder = new ViewHolder(convertView);
+            convertView.setTag(viewHolder);
+        } else {
+            viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        // Get the {@link Word} object located at this position in the list
-        Item currentWord = getItem(position);
+        // Get the {@link WItem} object located at this position in the list
+        Item currentItem = getItem(position);
 
-        // Find the TextView in the list_item.xml layout with the ID version_name
-        TextView nameTextView = (TextView) listItemView.findViewById(R.id.title_text_view);
-        // Get the version name from the current Word object and
-        // set this text on the name TextView
-        nameTextView.setText(currentWord.getTitle());
 
-        // Find the TextView in the list_item.xml layout with the ID version_number
-        TextView numberTextView = (TextView) listItemView.findViewById(R.id.description_text_view);
-        // Get the version number from the current Word object and
-        // set this text on the number TextView
-        numberTextView.setText(currentWord.getDescription());
+        viewHolder.titleTextView.setText(currentItem.getTitle());
+        viewHolder.descriptionTextView.setText(currentItem.getDescription());
 
-        // Find the ImageView in the list_item.xml layout with the ID list_item_icon
-        ImageView iconView = (ImageView) listItemView.findViewById(R.id.icon);
         // Get the image resource ID from the current AndroidFlavor object and
         // set the image to iconView
         // Check if an image is provided for this word or not
-        if (currentWord.hasImage()) {
+        if (currentItem.hasImage()) {
             // If an image is available, display the provided image based on the resource ID
-            iconView.setImageResource(currentWord.getPicture());
+            viewHolder.iconView.setImageResource(currentItem.getPicture());
             // Make sure the view is visible
-            iconView.setVisibility(View.VISIBLE);
+            viewHolder.iconView.setVisibility(View.VISIBLE);
         } else {
             // Otherwise hide the ImageView (set visibility to GONE)
-            iconView.setVisibility(View.GONE);
+            viewHolder.iconView.setVisibility(View.GONE);
         }
-
         // Set the theme color for the list item
-        View textContainer = listItemView.findViewById(R.id.text_container);
         // Find the color that the resource ID maps to
         int color = ContextCompat.getColor(getContext(), mColorResourceId);
         // Set the background color of the text container View
-        textContainer.setBackgroundColor(color);
+        viewHolder.textContainer.setBackgroundColor(color);
 
-        return listItemView;
+        return convertView;
+    }
+
+    class ViewHolder {
+        private TextView titleTextView;
+        private TextView descriptionTextView;
+        private ImageView iconView;
+        private View textContainer;
+
+        public ViewHolder(@NonNull View view) {
+            this.titleTextView = (TextView) view
+                    .findViewById(R.id.title_text_view);
+            this.descriptionTextView = (TextView) view
+                    .findViewById(R.id.description_text_view);
+            this.iconView = (ImageView) view
+                    .findViewById(R.id.icon);
+            this.textContainer = view.findViewById(R.id.text_container);
+        }
     }
 }
