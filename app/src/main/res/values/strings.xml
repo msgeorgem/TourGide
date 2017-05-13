@@ -6,9 +6,9 @@
     <string name="category_Wroclaw">Wroclaw</string>
     <string name="display_zoom">ZoooooM</string>
     <string name="church_N">Church</string>
-    <string name="Jasna_Góra_N">Jasna_Góra</string>
-    <string name="YA_Church_N">YA_Church</string>
-    <string name="Speedway_Stadium_N">Speedway_Stadium</string>
+    <string name="Jasna_Góra_N">Jasna Góra</string>
+    <string name="YA_Church_N">Yet Another Church</string>
+    <string name="Speedway_Stadium_N">Speedway Stadium</string>
     <string name="church">Gothic church of xxxx</string>
     <string name="Jasna_Góra">Famous Catherdal of Saint Mary</string>
     <string name="YA_Church">Yet another church</string>
@@ -30,22 +30,109 @@
     <string name="walls_wielun_N">Walls</string>
     <string name="museum_wielun_N">Museum</string>
     <string name="townhall_wielun_N">Townhall</string>
-    <string name="church01_Wielun">Gothic church of Saint Josephs</string>
-    <string name="church02_Wielun">Gothic church of Saint Mary</string>
-    <string name="fountain_wielun">Fountain at the market square</string>
-    <string name="walls_wielun">Rebuild medieval walls</string>
-    <string name="museum_wielun">Museum</string>
-    <string name="townhall_wielun">Rebuild medieval town hall</string>
+    <string name="church01_Wielun">Gothic church of Saint Josephs. is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry\'s standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type
+        and scrambled it to make a type specimen book. It has survived
+        not only five centuries, but also the leap into electronic
+        typesetting, remaining essentially unchanged. It was popularised
+        in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing
+        software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="church02_Wielun">Gothic church of Saint Mary. is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry\'s standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type
+        and scrambled it to make a type specimen book. It has survived
+        not only five centuries, but also the leap into electronic
+        typesetting, remaining essentially unchanged. It was popularised
+        in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing
+        software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="fountain_wielun">Fountain at the market square, is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry\'s standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type
+        and scrambled it to make a type specimen book. It has survived
+        not only five centuries, but also the leap into electronic
+        typesetting, remaining essentially unchanged. It was popularised
+        in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing
+        software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="walls_wielun">Rebuild medieval walls. is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry\'s standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type
+        and scrambled it to make a type specimen book. It has survived
+        not only five centuries, but also the leap into electronic
+        typesetting, remaining essentially unchanged. It was popularised
+        in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing
+        software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="museum_wielun">Museum. is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry\'s standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type
+        and scrambled it to make a type specimen book. It has survived
+        not only five centuries, but also the leap into electronic
+        typesetting, remaining essentially unchanged. It was popularised
+        in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing
+        software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="townhall_wielun">Rebuild medieval town hall, is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry\'s standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type
+        and scrambled it to make a type specimen book. It has survived
+        not only five centuries, but also the leap into electronic
+        typesetting, remaining essentially unchanged. It was popularised
+        in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing
+        software like Aldus PageMaker including versions of Lorem Ipsum.</string>
     <string name="tower_view_N">Tower view</string>
     <string name="sky_view_wro_N">Sky view</string>
     <string name="market_square_wro_N">Market Square</string>
     <string name="island_river_wro_N">Island on river</string>
     <string name="sky_tower_wro_N">Sky Tower</string>
-    <string name="tower_view">Tower view</string>
-    <string name="sky_view_wro">Sky view</string>
-    <string name="market_square_wro">Market Square</string>
-    <string name="island_river_wro">Island on river</string>
-    <string name="sky_tower_wro">Sky Tower</string>
-
-
+    <string name="tower_view">Tower view. is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry\'s standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type
+        and scrambled it to make a type specimen book. It has survived
+        not only five centuries, but also the leap into electronic
+        typesetting, remaining essentially unchanged. It was popularised
+        in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing
+        software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="sky_view_wro">Sky view.is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry\'s standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type
+        and scrambled it to make a type specimen book. It has survived
+        not only five centuries, but also the leap into electronic
+        typesetting, remaining essentially unchanged. It was popularised
+        in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing
+        software like Aldus PageMaker including versions of Lorem Ipsum. </string>
+    <string name="market_square_wro">Market Square. is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry\'s standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type
+        and scrambled it to make a type specimen book. It has survived
+        not only five centuries, but also the leap into electronic
+        typesetting, remaining essentially unchanged. It was popularised
+        in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing
+        software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="island_river_wro">Island on river Lorem Ipsum
+        is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry\'s standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type
+        and scrambled it to make a type specimen book. It has survived
+        not only five centuries, but also the leap into electronic
+        typesetting, remaining essentially unchanged. It was popularised
+        in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing
+        software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="sky_tower_wro">Sky Tower.is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry\'s standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type
+        and scrambled it to make a type specimen book. It has survived
+        not only five centuries, but also the leap into electronic
+        typesetting, remaining essentially unchanged. It was popularised
+        in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing
+        software like Aldus PageMaker including versions of Lorem Ipsum.</string>
 </resources>

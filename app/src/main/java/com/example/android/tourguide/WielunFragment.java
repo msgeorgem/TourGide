@@ -83,9 +83,6 @@ public class WielunFragment extends Fragment {
 
             }
 
-            private Item getItem(int position) {
-                return null;
-            }
         });
         return rootView;
     }

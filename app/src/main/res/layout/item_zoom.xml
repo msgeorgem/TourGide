@@ -14,12 +14,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:padding="16dp" />
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp" />
 
         <LinearLayout
             android:id="@+id/text_zoom"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
             android:padding="16dp">
@@ -27,7 +29,7 @@
             <TextView
                 android:id="@+id/title_text_view"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="bottom"
                 android:textAppearance="?android:textAppearanceMedium"
@@ -38,7 +40,7 @@
             <TextView
                 android:id="@+id/description_text_view"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="top"
                 android:textAppearance="?android:textAppearanceMedium"

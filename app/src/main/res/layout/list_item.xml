@@ -46,7 +46,8 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="top"
-            android:textAppearance="?android:textAppearanceMedium"
+            android:maxLines="2"
+            android:textAppearance="?android:textAppearanceSmall"
             android:textColor="@android:color/white"
             tools:text="description" />
 

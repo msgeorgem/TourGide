@@ -31,7 +31,7 @@ public class DisplayZoom extends AppCompatActivity {
         textViewDescription.setText(description);
 
         Bitmap picture = BitmapFactory.decodeByteArray(getIntent().getByteArrayExtra
-                (WielunFragment.EXTRA_PICTURE),0,getIntent().getByteArrayExtra(WielunFragment.EXTRA_PICTURE).length);
+                (WielunFragment.EXTRA_PICTURE), 0, getIntent().getByteArrayExtra(WielunFragment.EXTRA_PICTURE).length);
         ImageView imageViewPicture = (ImageView) findViewById(R.id.image_view);
         imageViewPicture.setImageBitmap(picture);
     }

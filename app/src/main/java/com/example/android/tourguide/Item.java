@@ -19,7 +19,9 @@ public class Item {
     }
 
 
-    public int getPicture() { return mPicture; }
+    public int getPicture() {
+        return mPicture;
+    }
 
     public int getTitle() {
         return mTitle;
@@ -28,6 +30,7 @@ public class Item {
     public int getDescription() {
         return mDescription;
     }
+
     /**
      * Returns whether or not there is an image for this item.
      */
