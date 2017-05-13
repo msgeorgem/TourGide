@@ -31,14 +31,17 @@ public class CategoryAdapter extends FragmentPagerAdapter {
      */
     @Override
     public Fragment getItem(int position) {
-        if (position == 0) {
-            return new WielunFragment();
-        } else if (position == 1) {
-            return new WroclawFragment();
-        } else if (position == 2) {
-            return new PoznanFragment();
-        } else {
-            return new CzestochowaFragment();
+        switch (position) {
+            case 0:
+                return new WielunFragment();
+            case 1:
+                return new WroclawFragment();
+            case 2:
+                return new PoznanFragment();
+            case 3:
+                return new CzestochowaFragment();
+            default:
+                return null;
         }
     }
 
