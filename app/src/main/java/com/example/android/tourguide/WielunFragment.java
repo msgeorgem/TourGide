@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -31,6 +32,7 @@ public class WielunFragment extends Fragment {
     public ItemAdapter adapter;
     public int index;
     Parcelable state;
+    private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
 
     public WielunFragment() {
         // Required empty public constructor
@@ -60,6 +62,8 @@ public class WielunFragment extends Fragment {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+                view.startAnimation(buttonClick);
 
                 Intent intent1 = new Intent(view.getContext(), DisplayZoom.class);
                 intent1.putExtra(EXTRA_TITLE, adapter.getItem(position).getTitle());

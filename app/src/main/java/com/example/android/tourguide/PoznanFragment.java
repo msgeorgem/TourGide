@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -26,6 +27,7 @@ public class PoznanFragment extends Fragment {
     public ListView listview;
     public ItemAdapter adapter;
     Parcelable state;
+    private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
 
     public PoznanFragment() {
         // Required empty public constructor
@@ -58,6 +60,8 @@ public class PoznanFragment extends Fragment {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+                view.startAnimation(buttonClick);
 
                 Intent intent1 = new Intent(view.getContext(), DisplayZoom.class);
                 intent1.putExtra(EXTRA_TITLE, adapter.getItem(position).getTitle());
@@ -101,7 +105,6 @@ public class PoznanFragment extends Fragment {
     public void onStop() {
         super.onStop();
     }
-
 
 }
 

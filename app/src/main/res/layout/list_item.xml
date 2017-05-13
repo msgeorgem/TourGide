@@ -4,7 +4,6 @@
     android:id="@+id/listItem"
     android:layout_width="match_parent"
     android:layout_height="@dimen/list_item_height"
-    android:background="@drawable/list_selector"
     android:minHeight="@dimen/list_item_height"
     android:orientation="horizontal">
 
@@ -12,14 +11,12 @@
         android:id="@+id/thumbnail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginRight="5dp"
         android:background="@drawable/image_gb"
         android:padding="3dp">
 
         <ImageView
             android:id="@+id/icon"
-            android:layout_width="@dimen/list_item_height"
+            android:layout_width="@dimen/list_item_width"
             android:layout_height="@dimen/list_item_height"
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
