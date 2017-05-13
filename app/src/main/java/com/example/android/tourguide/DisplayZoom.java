@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,6 +17,8 @@ public class DisplayZoom extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         setContentView(R.layout.item_zoom);
 
         String title = getIntent().getStringExtra(WielunFragment.EXTRA_TITLE);
@@ -36,4 +39,5 @@ public class DisplayZoom extends AppCompatActivity {
     public void onStop() {
         super.onStop();
     }
+
 }
