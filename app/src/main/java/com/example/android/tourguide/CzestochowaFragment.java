@@ -41,14 +41,14 @@ public class CzestochowaFragment extends Fragment {
         // Create an array of items
         final ArrayList<Item> items = new ArrayList<Item>();
 
-        items.add(new Item(R.drawable.church, "Church", "Gothic church of xxxx"));
-        items.add(new Item(R.drawable.jasnagora, "Jasna Góra", "Famous Catherdal of Saint Mary"));
-        items.add(new Item(R.drawable.jasnagora01, "Jasna Góra", "Famous Catherdal of Saint Mary"));
-        items.add(new Item(R.drawable.maxresdefault, "YA Church", "Yet another church"));
-        items.add(new Item(R.drawable.speedway, "Speedway Stadium", "Speedway Stadium is a favourite stadium for locals who enjoy watching their local speedway team"));
-        items.add(new Item(R.drawable.maxresdefault, "YA Church", "Yet another church"));
-        items.add(new Item(R.drawable.maxresdefault, "YA Church", "Yet another church"));
-        items.add(new Item(R.drawable.jasnagora01, "Jasna Góra", "Famous Catherdal of Saint Mary"));
+        items.add(new Item(R.drawable.church, R.string.church_N, R.string.church));
+        items.add(new Item(R.drawable.jasnagora, R.string.Jasna_Góra_N, R.string.Jasna_Góra));
+        items.add(new Item(R.drawable.jasnagora01, R.string.Jasna_Góra_N, R.string.Jasna_Góra));
+        items.add(new Item(R.drawable.maxresdefault, R.string.YA_Church_N, R.string.YA_Church));
+        items.add(new Item(R.drawable.speedway, R.string.Speedway_Stadium_N, R.string.Speedway_Stadium));
+        items.add(new Item(R.drawable.maxresdefault, R.string.YA_Church_N, R.string.YA_Church));
+        items.add(new Item(R.drawable.maxresdefault, R.string.YA_Church_N, R.string.YA_Church));
+        items.add(new Item(R.drawable.jasnagora01, R.string.Jasna_Góra_N, R.string.Jasna_Góra));
 
         adapter = new ItemAdapter(getActivity(), items, R.color.tan_background);
         listview = (ListView) rootView.findViewById(R.id.list);
@@ -60,9 +60,12 @@ public class CzestochowaFragment extends Fragment {
 
                 view.startAnimation(buttonClick);
 
+                String currentItemTitleString = getString(adapter.getItem(position).getTitle());
+                String currentItemDescString = getString(adapter.getItem(position).getDescription());
+
                 Intent intent1 = new Intent(view.getContext(), DisplayZoom.class);
-                intent1.putExtra(EXTRA_TITLE, adapter.getItem(position).getTitle());
-                intent1.putExtra(EXTRA_DESCRIPTION, adapter.getItem(position).getDescription());
+                intent1.putExtra(EXTRA_TITLE, currentItemTitleString);
+                intent1.putExtra(EXTRA_DESCRIPTION, currentItemDescString);
 
                 ByteArrayOutputStream bs = new ByteArrayOutputStream();
                 Bitmap b = BitmapFactory.decodeResource(getResources(), adapter.getItem(position).getPicture());

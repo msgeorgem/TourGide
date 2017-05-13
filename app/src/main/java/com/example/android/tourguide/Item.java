@@ -8,21 +8,24 @@ public class Item {
 
     private static final int NO_IMAGE_PROVIDED = -1;
     private int mPicture = NO_IMAGE_PROVIDED;
-    private String mTitle;
-    private String mDescription;
+    private int mTitle;
+    private int mDescription;
 
 
-    public Item(int picture, String title, String description) {
+    public Item(int picture, int title, int description) {
         mPicture = picture;
         mTitle = title;
         mDescription = description;
     }
 
+
     public int getPicture() { return mPicture; }
-    public String getTitle() {
+
+    public int getTitle() {
         return mTitle;
     }
-    public String getDescription() {
+
+    public int getDescription() {
         return mDescription;
     }
     /**

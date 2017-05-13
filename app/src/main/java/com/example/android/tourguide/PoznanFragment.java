@@ -41,17 +41,17 @@ public class PoznanFragment extends Fragment {
         // Create an array of items
         final ArrayList<Item> items = new ArrayList<Item>();
 
-        items.add(new Item(R.drawable.flight_poznan, "City Center", "City Center of Poznan"));
-        items.add(new Item(R.drawable.oldtown_poznan, "Oldtown Poznań", "Oldtown Poznań"));
-        items.add(new Item(R.drawable.railway_poznan, "Railway Poznań", "Railway Station with Mall"));
-        items.add(new Item(R.drawable.road_poznan, "Road Poznan", "Road Poznan"));
-        items.add(new Item(R.drawable.stadium_poznan, "Stadium Poznan", "City Stadium of Local football team Lech Poznan"));
-        items.add(new Item(R.drawable.townhall_poznan, "Townhall", "Famous townhall with goats"));
-        items.add(new Item(R.drawable.road_poznan, "Road Poznan", "Road Poznan"));
-        items.add(new Item(R.drawable.road_poznan, "Road Poznan", "Road Poznan"));
-        items.add(new Item(R.drawable.road_poznan, "Road Poznan", "Road Poznan"));
-        items.add(new Item(R.drawable.road_poznan, "Road Poznan", "Road Poznan"));
-        items.add(new Item(R.drawable.townhall_poznan, "Townhall", "Famous townhall with goats"));
+        items.add(new Item(R.drawable.flight_poznan, R.string.city_center_N, R.string.city_center));
+        items.add(new Item(R.drawable.oldtown_poznan, R.string.oldtown_poznan_N, R.string.oldtown_poznan));
+        items.add(new Item(R.drawable.railway_poznan, R.string.railway_poznan_N, R.string.railway_poznan));
+        items.add(new Item(R.drawable.road_poznan, R.string.road_poznan_N, R.string.road_poznan));
+        items.add(new Item(R.drawable.stadium_poznan, R.string.stadium_poznan_N, R.string.stadium_poznan));
+        items.add(new Item(R.drawable.townhall_poznan, R.string.townhall_N, R.string.townhall));
+        items.add(new Item(R.drawable.road_poznan, R.string.road_poznan_N, R.string.road_poznan));
+        items.add(new Item(R.drawable.road_poznan, R.string.road_poznan_N, R.string.road_poznan));
+        items.add(new Item(R.drawable.road_poznan, R.string.road_poznan_N, R.string.road_poznan));
+        items.add(new Item(R.drawable.road_poznan, R.string.road_poznan_N, R.string.road_poznan));
+        items.add(new Item(R.drawable.townhall_poznan, R.string.townhall_N, R.string.townhall));
 
         adapter = new ItemAdapter(getActivity(), items, R.color.tan_background);
         listview = (ListView) rootView.findViewById(R.id.list);
@@ -63,9 +63,12 @@ public class PoznanFragment extends Fragment {
 
                 view.startAnimation(buttonClick);
 
+                String currentItemTitleString = getString(adapter.getItem(position).getTitle());
+                String currentItemDescString = getString(adapter.getItem(position).getDescription());
+
                 Intent intent1 = new Intent(view.getContext(), DisplayZoom.class);
-                intent1.putExtra(EXTRA_TITLE, adapter.getItem(position).getTitle());
-                intent1.putExtra(EXTRA_DESCRIPTION, adapter.getItem(position).getDescription());
+                intent1.putExtra(EXTRA_TITLE, currentItemTitleString);
+                intent1.putExtra(EXTRA_DESCRIPTION, currentItemDescString);
 
                 ByteArrayOutputStream bs = new ByteArrayOutputStream();
                 Bitmap b = BitmapFactory.decodeResource(getResources(), adapter.getItem(position).getPicture());
@@ -101,6 +104,7 @@ public class PoznanFragment extends Fragment {
     public ItemAdapter getAdapter() {
         return adapter;
     }
+
     @Override
     public void onStop() {
         super.onStop();

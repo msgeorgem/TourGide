@@ -5,4 +5,47 @@
     <string name="category_Poznan">Poznan</string>
     <string name="category_Wroclaw">Wroclaw</string>
     <string name="display_zoom">ZoooooM</string>
+    <string name="church_N">Church</string>
+    <string name="Jasna_Góra_N">Jasna_Góra</string>
+    <string name="YA_Church_N">YA_Church</string>
+    <string name="Speedway_Stadium_N">Speedway_Stadium</string>
+    <string name="church">Gothic church of xxxx</string>
+    <string name="Jasna_Góra">Famous Catherdal of Saint Mary</string>
+    <string name="YA_Church">Yet another church</string>
+    <string name="Speedway_Stadium">Speedway Stadium is a favourite stadium for locals who enjoy watching their local speedway team</string>
+    <string name="city_center_N">City Center</string>
+    <string name="oldtown_poznan_N">Oldtown Poznań</string>
+    <string name="railway_poznan_N">Railway Poznań</string>
+    <string name="stadium_poznan_N">Stadium Poznan</string>
+    <string name="road_poznan_N">Road Poznan</string>
+    <string name="townhall_N">Townhall</string>
+    <string name="city_center">City Center of Poznan</string>
+    <string name="oldtown_poznan">Oldtown Poznań</string>
+    <string name="railway_poznan">Railway Station with Mall</string>
+    <string name="stadium_poznan">City Stadium of Local football team Lech Poznan</string>
+    <string name="road_poznan">Road inside the center of the Poznan</string>
+    <string name="townhall">Famous townhall with goats</string>
+    <string name="church_Wielun_N">Church</string>
+    <string name="fountain_wielun_N">Fountain</string>
+    <string name="walls_wielun_N">Walls</string>
+    <string name="museum_wielun_N">Museum</string>
+    <string name="townhall_wielun_N">Townhall</string>
+    <string name="church01_Wielun">Gothic church of Saint Josephs</string>
+    <string name="church02_Wielun">Gothic church of Saint Mary</string>
+    <string name="fountain_wielun">Fountain at the market square</string>
+    <string name="walls_wielun">Rebuild medieval walls</string>
+    <string name="museum_wielun">Museum</string>
+    <string name="townhall_wielun">Rebuild medieval town hall</string>
+    <string name="tower_view_N">Tower view</string>
+    <string name="sky_view_wro_N">Sky view</string>
+    <string name="market_square_wro_N">Market Square</string>
+    <string name="island_river_wro_N">Island on river</string>
+    <string name="sky_tower_wro_N">Sky Tower</string>
+    <string name="tower_view">Tower view</string>
+    <string name="sky_view_wro">Sky view</string>
+    <string name="market_square_wro">Market Square</string>
+    <string name="island_river_wro">Island on river</string>
+    <string name="sky_tower_wro">Sky Tower</string>
+
+
 </resources>

@@ -41,15 +41,15 @@ public class WroclawFragment extends Fragment {
         // Create an array of items
         final ArrayList<Item> items = new ArrayList<Item>();
 
-        items.add(new Item(R.drawable.church_tower_view_wro, "Tower view", "Tower view"));
-        items.add(new Item(R.drawable.flight_wro, "Sky view", "Sky view"));
-        items.add(new Item(R.drawable.market_square_wro, "Market Square", "Market Square"));
-        items.add(new Item(R.drawable.ostrow_wro, "Island on river", "Island on river"));
-        items.add(new Item(R.drawable.sky_tower_wro, "Museum", "Museum"));
-        items.add(new Item(R.drawable.sky_tower_wro, "Museum", "Museum"));
-        items.add(new Item(R.drawable.sky_tower_wro, "Museum", "Museum"));
-        items.add(new Item(R.drawable.sky_tower_wro, "Museum", "Museum"));
-        items.add(new Item(R.drawable.flight_wro, "Sky view", "Sky view"));
+        items.add(new Item(R.drawable.church_tower_view_wro, R.string.tower_view_N, R.string.tower_view));
+        items.add(new Item(R.drawable.flight_wro, R.string.sky_view_wro_N, R.string.sky_view_wro));
+        items.add(new Item(R.drawable.market_square_wro, R.string.market_square_wro_N, R.string.market_square_wro));
+        items.add(new Item(R.drawable.ostrow_wro, R.string.island_river_wro_N, R.string.island_river_wro));
+        items.add(new Item(R.drawable.sky_tower_wro, R.string.sky_tower_wro_N, R.string.sky_tower_wro));
+        items.add(new Item(R.drawable.sky_tower_wro, R.string.sky_tower_wro_N, R.string.sky_tower_wro_N));
+        items.add(new Item(R.drawable.sky_tower_wro, R.string.sky_tower_wro_N, R.string.sky_tower_wro_N));
+        items.add(new Item(R.drawable.sky_tower_wro, R.string.sky_tower_wro_N, R.string.sky_tower_wro_N));
+        items.add(new Item(R.drawable.flight_wro, R.string.sky_view_wro_N, R.string.sky_view_wro));
 
         adapter = new ItemAdapter(getActivity(), items, R.color.tan_background);
         listview = (ListView) rootView.findViewById(R.id.list);
@@ -61,9 +61,12 @@ public class WroclawFragment extends Fragment {
 
                 view.startAnimation(buttonClick);
 
+                String currentItemTitleString = getString(adapter.getItem(position).getTitle());
+                String currentItemDescString = getString(adapter.getItem(position).getDescription());
+
                 Intent intent1 = new Intent(view.getContext(), DisplayZoom.class);
-                intent1.putExtra(EXTRA_TITLE, adapter.getItem(position).getTitle());
-                intent1.putExtra(EXTRA_DESCRIPTION, adapter.getItem(position).getDescription());
+                intent1.putExtra(EXTRA_TITLE, currentItemTitleString);
+                intent1.putExtra(EXTRA_DESCRIPTION, currentItemDescString);
 
                 ByteArrayOutputStream bs = new ByteArrayOutputStream();
                 Bitmap b = BitmapFactory.decodeResource(getResources(), adapter.getItem(position).getPicture());

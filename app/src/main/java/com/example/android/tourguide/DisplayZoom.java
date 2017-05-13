@@ -8,6 +8,7 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 /**
  * Created by Marcin on 2017-05-08.
  */

@@ -31,6 +31,9 @@ public class WielunFragment extends Fragment {
     public ListView listview;
     public ItemAdapter adapter;
     public int index;
+    public int title;
+    public int description;
+
     Parcelable state;
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
 
@@ -46,14 +49,14 @@ public class WielunFragment extends Fragment {
         // Create an array of items
         final ArrayList<Item> items = new ArrayList<Item>();
 
-        items.add(new Item(R.drawable.church01,"Church", "Gothic church of Saint Josephs"));
-        items.add(new Item(R.drawable.church02,"Church", "Gothic church of Saint Mary"));
-        items.add(new Item(R.drawable.fountain,"Fountain", "Fountain at the market square"));
-        items.add(new Item(R.drawable.medieval_walls,"Wals", "Rebuild medieval walls"));
-        items.add(new Item(R.drawable.museum,"Museum", "Museum"));
-        items.add(new Item(R.drawable.townhall,"Townhall", "Rebuild medieval town hall"));
-        items.add(new Item(R.drawable.townhall, "Townhall", "Rebuild medieval town hall"));
-        items.add(new Item(R.drawable.townhall, "Townhall", "Rebuild medieval town hall"));
+        items.add(new Item(R.drawable.church01, R.string.church_Wielun_N, R.string.church01_Wielun));
+        items.add(new Item(R.drawable.church02, R.string.church_Wielun_N, R.string.church02_Wielun));
+        items.add(new Item(R.drawable.fountain, R.string.fountain_wielun_N, R.string.fountain_wielun));
+        items.add(new Item(R.drawable.medieval_walls, R.string.walls_wielun_N, R.string.walls_wielun));
+        items.add(new Item(R.drawable.museum, R.string.museum_wielun_N, R.string.museum_wielun));
+        items.add(new Item(R.drawable.townhall, R.string.townhall_wielun_N, R.string.townhall_wielun));
+        items.add(new Item(R.drawable.townhall, R.string.townhall_wielun_N, R.string.townhall_wielun));
+        items.add(new Item(R.drawable.townhall, R.string.townhall_wielun_N, R.string.townhall_wielun));
 
         adapter = new ItemAdapter(getActivity(), items, R.color.tan_background);
         listview = (ListView) rootView.findViewById(R.id.list);
@@ -65,16 +68,23 @@ public class WielunFragment extends Fragment {
 
                 view.startAnimation(buttonClick);
 
+                String currentItemTitleString = getString(adapter.getItem(position).getTitle());
+                String currentItemDescString = getString(adapter.getItem(position).getDescription());
+
                 Intent intent1 = new Intent(view.getContext(), DisplayZoom.class);
-                intent1.putExtra(EXTRA_TITLE, adapter.getItem(position).getTitle());
-                intent1.putExtra(EXTRA_DESCRIPTION, adapter.getItem(position).getDescription());
+                intent1.putExtra(EXTRA_TITLE, currentItemTitleString);
+                intent1.putExtra(EXTRA_DESCRIPTION, currentItemDescString);
 
                 ByteArrayOutputStream bs = new ByteArrayOutputStream();
-                Bitmap b = BitmapFactory.decodeResource(getResources(),adapter.getItem(position).getPicture());
+                Bitmap b = BitmapFactory.decodeResource(getResources(), adapter.getItem(position).getPicture());
                 b.compress(Bitmap.CompressFormat.JPEG, 50, bs);
-                intent1.putExtra(EXTRA_PICTURE,bs.toByteArray());
+                intent1.putExtra(EXTRA_PICTURE, bs.toByteArray());
                 startActivityForResult(intent1, REQUEST_RESPONSE);
 
+            }
+
+            private Item getItem(int position) {
+                return null;
             }
         });
         return rootView;
